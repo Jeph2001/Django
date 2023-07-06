@@ -13,7 +13,7 @@
 </body>
 </html> -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Simple HTML Table</title>
@@ -54,5 +54,14 @@
 
     </table>
 </body>
-</html>
+</html> -->
+
+
+<form action="/web_app/admindata/" method="post">
+    {% csrf_token %}
+    {{ formm }}
+    <blockquote>
+        <input type="submit" value="CREATE">
+    </blockquote>
+</form>
 

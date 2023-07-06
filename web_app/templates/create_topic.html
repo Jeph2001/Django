@@ -1,0 +1,46 @@
+<!-- create_topic.html
+<form method="post">
+    {% csrf_token %}
+    
+    < Render form fields -->
+    <!-- <div class="field">
+      <label for="{{ form.subject.id_for_label }}">Subject:</label>
+      {{ form.subject }}
+    </div>
+    
+    <div class="field">
+      <label for="{{ form.message.id_for_label }}">Message:</label>
+      {{ form.message }}
+    </div>
+    
+    <button type="submit">Create Topic</button>
+  </form>
+   <! --> 
+
+   <form action="/web_app/create/" method="post">
+    {% csrf_token %}
+    {{form}}
+    <!-- <blockquote>
+      <label for="subject">subject:</label>
+      <input type="text" name="subject" value="{{subject}}">
+    </blockquote>
+    <blockquote>
+      <label for="last updated">Last Updated</label>
+      <input type="datetime" name="last updated" value="{{last_updated}}">
+     </blockquote>
+     <blockquote>
+      <label for="board">board</label>
+      <input type="text" name="board" value="{{board}}">
+     </blockquote>
+     <blockquote>
+      <label for="starter">starter</label>
+      <input type="text" name="starter" value="{{starter}}">
+      
+     </blockquote> -->
+     <blockquote>
+      <input type="submit" value="CREATE">
+     </blockquote>
+      
+     
+      
+   </form>
