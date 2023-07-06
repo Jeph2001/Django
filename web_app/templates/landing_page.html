@@ -1,0 +1,50 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Your head content here -->
+    <style>
+        /* CSS styles for the navigation menu */
+        .navigation {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navigation li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .navigation li a {
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navigation">
+                <li><a href="/app/">Home</a></li>
+                <li><a href="/web_app/admindata/">Boards</a></li>
+                <li><a href="/web_app/board/">Topics</a></li>
+                <li><a href="/web_app/post/">Posts</a></li>
+                <li><a href="/web_app/create/">New Topic</a></li>
+                <li><a href="/web-app/chat/">New Post</a></li>
+                <!-- Add more menu items as needed -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Your page content here -->
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+</body>
+</html>

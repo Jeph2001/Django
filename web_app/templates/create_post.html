@@ -1,0 +1,54 @@
+<!-- <form action="/web_app/chat/" method="post">
+    (% csrf_token %)
+    <blockquote>
+        {{pform}}
+    </blockquote>
+    
+    <blockquote>
+        <input type="submit" value="CHAT">
+    </blockquote>
+</form> -->
+
+<form method="post" action="/web_app/chat/">
+    {% csrf_token %}
+    
+    <div class="form-block">
+      <label for="{{ form.message.id_for_label }}">Message:</label>
+      {{ pform.message }}
+    </div>
+    
+    <div class="form-block">
+      <label for="{{ form.topic.id_for_label }}">Topic:</label>
+      {{ pform.topic }}
+    </div>
+    
+    <div class="form-block">
+      <label for="{{ form.created_by.id_for_label }}">Created By:</label>
+      {{ pform.created_by }}
+    </div>
+    
+    <div class="form-block">
+      <label for="{{ form.updated_by.id_for_label }}">Updated By:</label>
+      {{ pform.updated_by }}
+    </div>
+    
+    <div class="form-block">
+        <label for="{{ form.created_at.id_for_label }}">Created At:</label>
+        {{ pform.Created_at }}
+      </div>
+    
+      <div class="form-block">
+        <label for="{{ form.updated_at.id_for_label }}">Updated At:</label>
+        {{ pform.updated_at }}
+      </div>
+
+    
+    <input type="submit" value="Submit">
+  </form>
+  
+  <style>
+    .form-block {
+      margin-bottom: 10px;
+    }
+  </style>
+  

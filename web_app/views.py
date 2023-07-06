@@ -2,10 +2,19 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Board, Topic, Post
 # from .forms import NewTopicForm
-from .forms import TopicForm, BoardForm
+from .forms import TopicForm, BoardForm, PostForm
 
 
 # Create your views here.
+def landing(request):
+    return render(request, 'landing_page.html')
+
+
+def confirming(request):
+    return render(request, 'confirmation.html')
+
+
+
 def home(request):
     return render(request, 'home.html')
 
@@ -46,7 +55,7 @@ def get_topic(request):
         form = TopicForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/web_app/post/')
+            return HttpResponseRedirect('/web_app/confirm/')
     
     else:
         form = TopicForm()
@@ -59,10 +68,24 @@ def get_board(request):
         formm = BoardForm(request.POST)
         if formm.is_valid():
             formm.save()
-            return HttpResponseRedirect('/web_app/post/')
+            return HttpResponseRedirect('/web_app/confirm/')
     else:
         formm = BoardForm()
     return render(request, 'admin_data.html', {'formm': formm})
+
+
+def get_post(request):
+    if request.method == 'POST':
+        pform = PostForm(request.POST)
+        if pform.is_valid:
+            pform.save()
+            return HttpResponseRedirect('/web_app/confirm/')
+    else:
+        pform = PostForm()
+    return render(request, 'create_post.html', {'pform': pform})
+
+
+
 
 
 
