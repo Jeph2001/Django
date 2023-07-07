@@ -16,40 +16,49 @@
     <button type="submit">Create Topic</button>
   </form>
    <! --> 
-
-   <form action="/web_app/create/" method="post">
-    {% csrf_token %}
-    {{form}}
-    <!-- <blockquote>
-      <label for="subject">subject:</label>
-      <input type="text" name="subject" value="{{subject}}">
-    </blockquote>
-    <blockquote>
-      <label for="last updated">Last Updated</label>
-      <input type="datetime" name="last updated" value="{{last_updated}}">
-     </blockquote>
-     <blockquote>
-      <label for="board">board</label>
-      <input type="text" name="board" value="{{board}}">
-     </blockquote>
-     <blockquote>
-      <label for="starter">starter</label>
-      <input type="text" name="starter" value="{{starter}}">
-      
-     </blockquote> -->
-     <style>
+    <style>
         .navigation li {
             display: inline-block;
             margin-right: 10px;
         }
      </style>
-     <blockquote>
+     <div class="form-block"></div>
+      <li><a href="/web_app/">HOME</a></li>
+     </blockquote> 
+
+   <form action="/web_app/create/" method="post">
+    {% csrf_token %}
+    <!-- {{form}} -->
+      <div class="form-block">
+      <label for="{{ form.subject.id_for_label }}">subject:</label>
+      {{form.subject}}
+      </div>
+    
+    <div class="form-block">
+      <label for="{{ form.last_updated.id_for_label}}">Last Updated</label>
+      {{form.last_updated}}
+    </div>
+     <div class="form-block">
+      <label for="{{ form.board.id_for_label}}">board</label>
+      {{form.board}}
+    </div>
+     <div class="form-block">
+      <label for="{{ form.starter.id_for_label }}">starter</label>
+      {{form.starter}}
+    </div>
+     <!-- <style>
+        .navigation li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+     </style>
+     <div class="form-block"></div>
       <li><a href="/web_app/">HOME</a></li>
      </blockquote>
-     <blockquote>
+     <div class="form-block"></div>
       <input type="submit" value="CREATE">
      </blockquote>
       
      
       
-   </form>
+   </form> -->
