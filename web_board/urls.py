@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('web_app/', include('web_app.urls')),
     path('scamming/', include('scamming.urls')),
+    path('accounts/', include('accounts.urls')),
 ]

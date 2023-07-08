@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+   <style>
+    .demo{
+    margin-left: 30%;
+    background-color:rgb(238, 236, 236);
+    width: 450px;
+    height: 450px;
+    margin-top: 10%;
+}
+.mode{
+    margin-left: 30px;
+    background-color: rgb(247, 249, 251);
+    width: 350px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+h3{
+    text-align: center;
+    border: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+}
+h4{
+    text-align: center;
+    border: 1px;
+
+}
+
+label{
+    margin-left: 20px;
+
+}
+input{
+    padding: 5px;
+    margin-left: 20px;
+    width:300px;
+}
+button{
+    margin-left: 20px;
+    background-color:#0091ff ;
+    color: white;
+    border-radius: 8px;
+    width: 310px;
+    padding: 10px;
+}
+p{   text-align: center;
+    background-color: darkgrey;
+    width: 335px;
+    border-radius: 7px;
+    padding: 8px;
+}
+.log{
+    color: black;
+    border: 3px;
+}
+.forgot{
+    margin-left: 33%;
+}
+   </style>
+</head>
+<body>
+    <div class="demo">
+        <h3>Django Boards</h3>
+        <h4>Log in</h4>
+        <form action="/accounts/login/" method="post">
+        {% csrf_token %}
+        <div class="mode">
+         <label for="{{lform.username.id_for_label}}">Username</label><br>
+         {{lform.username}}
+         <label for="{{ lform.password.id_for_label }}">Password</label><br>
+         {{lform.password}}
+         <button>Log in</button><br>
+         <p>New to Django Boards?<a href="#" class="log"><b>Sign Up</b></a></p>
+        
+        </div>
+        <a href="#" class="forgot">Forgot your password?</a>
+    </form>
+    </div>
+
+</body>
+</html>
