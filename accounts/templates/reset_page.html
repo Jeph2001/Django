@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    <style>
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+.form-field{
+    margin-left: 30px;
+    background-color: rgb(247, 249, 251);
+    width: 350px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+h3{
+    text-align: center;
+    border: 2px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+}
+h4{
+    text-align: center;
+    border: 1px;
+
+}
+
+label{
+    margin-left: 20px;
+
+}
+input{
+    padding: 5px;
+    margin-left: 20px;
+    width:300px;
+}
+button{
+    margin-left: 20px;
+    background-color:#0091ff ;
+    color: white;
+    border-radius: 8px;
+    width: 300px;
+    padding: 10px;
+}
+p{
+    background-color: darkgrey;
+    width: 335px;
+    border-radius: 7px;
+    padding: 8px;
+}
+.log{
+    color: black;
+  border:3px;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <div>
+        <h3>Django Boards</h3>
+        <h4>Sign Up</h4>
+         <form action="/accounts/keep/" method="post">
+            {% csrf_token %}
+            <!-- {{form}} -->
+            <blockquote>
+            <div class="form-field">
+                <label for="{{ form.password.id_for_label }}">Password</label>
+                {{kform.password}}
+            </div>
+            </blockquote>
+            <blockquote>
+            <div class="form-field">
+                <label for="{{ form.confirm_password.id_for_label }}">Comfilm password</label>
+                {{kform.confirm_password}}
+            </div>
+            </blockquote>
+            <blockquote>
+            <div class="form-submit">
+                <button type="submit">Reset Password</button>
+            </div>
+        </blockquote>
+            
+    </form>
+    </div>
+</body>
+</html>

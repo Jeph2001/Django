@@ -10,6 +10,10 @@ class SignUp(models.Model):
     confirm_password = models.CharField(max_length=50, default='use same password')
 
 
+class KeepReset(models.Model):
+    password = models.CharField(max_length=50)
+    confirm_password = models.CharField(max_length=50)
+
 
 # class Login(models.Model):
 #     username = models.ForeignKey(SignUp, on_delete=models.CASCADE, related_name='logging')
