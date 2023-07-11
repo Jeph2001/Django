@@ -24,7 +24,7 @@ def save_reset(request):
         kform = KeepResetForm(request.POST)
         if kform.is_valid():
             kform.save()
-            return HttpResponseRedirect('/accounts/confirm/')
+            return HttpResponseRedirect('/confirm/')
     else:
         kform = KeepResetForm()
     return render(request, 'reset_page.html', {'kform': kform})
@@ -49,7 +49,7 @@ def login(request):
             try:
                 user = SignUp.objects.get(username=username)
                 if user.password ==password:
-                    return HttpResponseRedirect('/web_app/app/')
+                    return HttpResponseRedirect('/web_app/')
                 else:
                     lform.add_error(None, "Incorrect password or username. we don't know you")
             except SignUp.DoesNotExist:
@@ -68,7 +68,7 @@ def password_reset(request):
             try:
                 user = SignUp.objects.get(email_address=email_address)
                 if user.email_address ==email_address:
-                    return HttpResponseRedirect('/accounts/keep/')
+                    return HttpResponseRedirect('/keep/')
                 else:
                     pform.add_error(None, "unknown user, try again")
             except SignUp.DoesNotExist:

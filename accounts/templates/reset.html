@@ -68,12 +68,13 @@ p{   text-align: center;
     <div class="demo">
         <h3>Django Boards</h3>
         <h4>Log in</h4>
-        <form action="/accounts/reset/" method="post">
+        <form action="" method="post">
         {% csrf_token %}
         <div class="mode">
          <label for="{{pform.email_address.id_for_label}}">Enter your Email.</label><br>
          {{pform.email_address}}
         </div>
+        <button type="submit">Reset Your Password</button>
     </form>
     </div>
 

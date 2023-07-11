@@ -68,7 +68,7 @@ p{   text-align: center;
     <div class="demo">
         <h3>Django Boards</h3>
         <h4>Log in</h4>
-        <form action="/accounts/login/" method="post">
+        <form action="/" method="post">
         {% csrf_token %}
         <div class="mode">
          <label for="{{lform.username.id_for_label}}">Username</label><br>
@@ -76,10 +76,10 @@ p{   text-align: center;
          <label for="{{ lform.password.id_for_label }}">Password</label><br>
          {{lform.password}}
          <button>Log in</button><br>
-         <p>New to Django Boards?<a href="#" class="log"><b>Sign Up</b></a></p>
+         <p>New to Django Boards?<a href="/signup/"><b>Sign Up</b></a></p>
         
         </div>
-        <a href="#" class="forgot">Forgot your password?</a>
+        <a href="reset/" class="forgot">Forgot your password?</a>
     </form>
     </div>
 
