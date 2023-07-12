@@ -17,6 +17,7 @@ class LoginForm(forms.Form):
 
 class ResetForm(forms.Form):
     email_address = forms.CharField(max_length=100, label='Email')
+    # password = forms.CharField(max_length=50, widget=forms.PasswordInput, label='Password')
 
 
 class KeepResetForm(forms.ModelForm):
@@ -27,6 +28,7 @@ class KeepResetForm(forms.ModelForm):
         fields = "__all__"
 #     password = forms.CharField(max_length=50, widget=forms.PasswordInput, label='Password')
 #     confirm_password = forms.CharField(max_length=50, widget=forms.PasswordInput, label='Confirm Password')
+
 
 
 

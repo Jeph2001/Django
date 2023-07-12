@@ -8,7 +8,8 @@ class BoardAdmin(admin.ModelAdmin):
 
 
 class TopicAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'last_updated', 'board', 'starter')
+    list_display = ('subject','message') 
+    # 'last_updated', 'board', 'starter')
 
 
 class PostAdmin(admin.ModelAdmin):

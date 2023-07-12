@@ -67,6 +67,9 @@ p{
             {% csrf_token %}
             <!-- {{form}} -->
             <blockquote>
+                <p>enter your new password and make sure that you keep it safe such that you don't forget it.</p>
+            </blockquote>
+            <blockquote>
             <div class="form-field">
                 <label for="{{ form.password.id_for_label }}">Password</label>
                 {{kform.password}}

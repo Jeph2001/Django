@@ -65,9 +65,11 @@ def password_reset(request):
         pform = ResetForm(request.POST)
         if pform.is_valid():
             email_address = pform.cleaned_data['email_address']
+            # password = pform.cleaned_data['password']
             try:
                 user = SignUp.objects.get(email_address=email_address)
-                if user.email_address ==email_address:
+                # if user.password ==password:
+                if user.email_address == email_address:
                     return HttpResponseRedirect('/keep/')
                 else:
                     pform.add_error(None, "unknown user, try again")
@@ -76,6 +78,8 @@ def password_reset(request):
         else:
             pform = ResetForm()
     return render(request, 'reset.html', {'pform': pform})
+
+
 
 
 
